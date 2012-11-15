@@ -21,11 +21,12 @@ $admin_link ="<div id='admin_menu'>
 				<a href='../admin_site/user_list.php'>User Listing</a>&ndash;
 				<a href='../admin_site/sitestatus_updateform.php'>Site Status</a>
 			</div></br>";
+$content_info = $tpl->fetch($template_path.'user_profile.tpl.php');
 
 $contentContainer = array(
     array(
         "title" => $title,
-        "content" => $id == 1 ? $admin_link : '',
+        "content" => $id == 1 ? $admin_link.$content_info : $content_info,
 		"bottom_image" =>''
     )
 );
@@ -41,5 +42,4 @@ $tpl->content_container = $contentContainer;
 $tpl->login = $tpl->fetch($template_path.'login.tpl.php');
 $tpl->header = $tpl->fetch($template_path.'header.tpl.php');
 $tpl->footer = $tpl->fetch($template_path.'footer.tpl.php');
-$tpl->user_profile = $tpl->fetch($template_path.'user_profile.tpl.php');
 $tpl->display($template_path.'main.tpl.php');

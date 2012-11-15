@@ -10,9 +10,6 @@
 		<?php echo $result;?>
 	</div>
 <?php } ?>
-<!-- TinyEditor -->
-<script type="text/javascript" src="<?php echo $PREFIX; ?>/libs/tinyeditor/tiny.editor.packed.js"></script>
-<link rel="stylesheet" href="<?php echo $PREFIX; ?>/libs/tinyeditor/tinyeditor.css" type="text/css" />
 <div class="smallfont">
     All Fields are required to be filled.
 </div>

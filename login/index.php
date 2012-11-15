@@ -17,7 +17,7 @@ $meta_description = "Welcome to CoinCod - a unique auction system built to draw 
 $contentContainer = array(
     array(
         "title" => $title,
-        "content" => '',
+        "content" => $tpl->fetch($template_path.'loginform.tpl.php'),
 		"bottom_image" =>''
     )
 );
@@ -33,6 +33,6 @@ $tpl->content_container = $contentContainer;
 $tpl->login = $tpl->fetch($template_path.'login.tpl.php');
 $tpl->header = $tpl->fetch($template_path.'header.tpl.php');
 $tpl->footer = $tpl->fetch($template_path.'footer.tpl.php');
-$tpl->loginform = $tpl->fetch($template_path.'loginform.tpl.php');
+
 $tpl->display($template_path.'main.tpl.php');
 ?>

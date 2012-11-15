@@ -2,7 +2,7 @@
 	include_once 'functions.php';
 	require $this->template_path.'config.php';
 ?>
-<div class="site_body">
+<section class="site_body">
 <?php
 	$highest_bidder = getTopBidder();
 	$totalproduct = getTotalProduct();
@@ -48,17 +48,21 @@
 			<script>
 				Timer[<?=$pro_id?>] = <?=$auctiontime?>;
 			</script>
-			<ul class="auction_box">
+			<ul id="auction_list_ul" class="auction_box">
 				<li>
-					<form id="myForm" name="postlink" action="<?=$PREFIX?>/product/product_description.php" method="post">
-				  	  	<input type="hidden" name="pid" value='<?=$pro_id?>' />
-				 	   	<input name="link"  class="button_title" type="submit" value="<?=$pro_brand.$pro_model?>" />	
-					</form>
+					<div class="title">
+						<form id="myForm" name="postlink" action="<?=$PREFIX?>/product/product_description.php" method="post">
+							<input type="hidden" name="pid" value='<?=$pro_id?>' />
+							<input name="link"  class="button_title" type="submit" value="<?=$pro_brand.$pro_model?>" />	
+						</form>
+					</div>
 					
-					<form id="myForm" name="postlink" action="<?=$PREFIX?>/product/product_description.php" method="post">
-					  	<input type="hidden" name="pid" value='<?=$pro_id?>' />
-				  	    <input type="image" src="<?=$PREFIX?>/product/product_image/<?=$pro_id?>.jpg" width="210" height="150" input name="link"  class="button_image"  type="submit" value="<?=$pro_brand.$pro_model?>" />				  	
-					</form>
+					<div class="image">
+						<form id="myForm" name="postlink" action="<?=$PREFIX?>/product/product_description.php" method="post">
+							<input type="hidden" name="pid" value='<?=$pro_id?>' />
+							<input type="image" src="<?=$PREFIX?>/product/product_image/<?=$pro_id?>.jpg" width="210" height="150" input name="link" type="submit" value="<?=$pro_brand.$pro_model?>" />				  	
+						</form>
+					</div>
 					
 					<div class="bid_current">
 						Current Auction Price:
@@ -111,6 +115,14 @@
 						        </div>
 							<?php }
 						} ?>
+						
+						<div id="read_more">						
+							<form id="myForm" name="postlink" action="<?=$PREFIX?>/product/product_description.php" method="post">
+								<input type="hidden" name="pid" value='<?=$pro_id?>' />
+								<input name="link"  class="read_more" type="submit" value="Read More..." />	
+							</form>
+						</div>
+						
 						<span class="bid_spot">
 							Highest Bidder<?=$highest_bidder?> 
 							<!--This is the spot for you to put the bid function<div>Bid<div>-->
@@ -127,4 +139,4 @@
 		echo "no data";
 	}
 ?>
-</div>
+</section>

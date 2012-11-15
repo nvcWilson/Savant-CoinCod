@@ -18,7 +18,7 @@ $contentContainer = array(
     array(
         "title" => $title,
         "content" => '<div class="buy_tokens">Choose your package by clicking on the button. Please take note that your payment is processed using Paypal. You will also receive a notification e-mail from CoinCod on this transaction.
-			</div>',
+			</div>'.$tpl->fetch($template_path.'buy_token.tpl.php'),
 		"bottom_image" =>'<img class="bottom" src="../template/template_image/bottom/buy_tokens.png" alt="tokens shopping">'
     )
 );
@@ -34,5 +34,4 @@ $tpl->content_container = $contentContainer;
 $tpl->login = $tpl->fetch($template_path.'login.tpl.php');
 $tpl->header = $tpl->fetch($template_path.'header.tpl.php');
 $tpl->footer = $tpl->fetch($template_path.'footer.tpl.php');
-$tpl->buy_token = $tpl->fetch($template_path.'buy_token.tpl.php');
 $tpl->display($template_path.'main.tpl.php');

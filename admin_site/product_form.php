@@ -21,7 +21,7 @@ $admin_link ="<div id='admin_menu'>
 				<a href='../admin_site/user_list.php'>User Listing</a>&ndash;
 				<a href='../admin_site/sitestatus_updateform.php'>Site Status</a>
 			</div></br>";
-$product_form = $tpl->productform = $tpl->fetch($template_path.'product_form.tpl.php');
+$product_form = $tpl->fetch($template_path.'product_form.tpl.php');
 
 $contentContainer = array(
     array(
