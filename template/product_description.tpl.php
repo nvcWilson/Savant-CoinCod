@@ -98,7 +98,7 @@
                 
 								<div class="product_bid_button">
 									<?php if(!isset($_SESSION['user_id'])) { ?>
-										<form action="<?=$PREFIX?>/product" method="post">
+										<form action="<?=$PREFIX?>/login" method="post">
 											<div class="bid_button">
 												<input name="login"  class="button" type="submit" value="LOGIN" />
 											</div>
